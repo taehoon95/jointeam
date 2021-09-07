@@ -36,6 +36,6 @@ public class RegisterServlet extends HttpServlet {
 			out.println("</body>");
 		out.println("</html>");
 		out.close();
-	}
+	}  
 
 }
