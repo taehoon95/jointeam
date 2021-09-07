@@ -20,7 +20,7 @@ public class UpdateServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("µÎ°¹");
+		System.out.println("¼öÁ¤ µÎ°¹");
 		Map<Integer,String> empMap = new HashMap<>();
 		response.setContentType("text/html; charset = utf-8");
 		PrintWriter out = response.getWriter();
