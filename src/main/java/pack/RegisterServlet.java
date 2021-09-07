@@ -15,7 +15,7 @@ public class RegisterServlet extends HttpServlet {
        
     public RegisterServlet() {
         super();
-        System.out.println("持失切 紬~~~");
+        System.out.println("持失切 紬~~");
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,11 +24,11 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doPost");
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
 		System.out.println(id);
 		
-		response.setContentType("text/html;charset=euc-kr");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 			out.println("<body>");
