@@ -1,41 +1,62 @@
 package pack;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class DeleteServlet
- */
-@WebServlet("/ListServlet")
+
+@WebServlet("/list")
 public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	public ListServlet() {
+		System.out.println("생성자 콜");
+	}
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ListServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("list doget");
+		response.setContentType("text/html; charset=UTF-8;"); // 한글 설정
+		String[] id = new String[] { "jinwoo", "taehoon", "ryeongeun", "songhwa" };
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter pw = response.getWriter();// 요청
+		pw.println("<div>");
+		pw.println("<table border='1' width='1200'>");
+		pw.println("<tr>");
+		pw.println("<td>아이디</td>");
+		pw.println("<td>삭제</td>");
+		pw.println("<td>수정</td>");
+		pw.println("</tr>");
+
+		for (int i = 0; i < id.length; i++) {
+
+			pw.println("<tr>");
+			pw.println("<td>" + id[i] + "</td>");
+			pw.println("<td><a href='delete?id=" + id[i] + "'>삭제</a></td>");
+			pw.println("<td><a href='update?id=" + id[i] + "'>수정</a></td>");
+			pw.println("</tr>");
+
+			
+		}
+
+		pw.println("</table>");
+
+		pw.println("</div>");
+
+		pw.println("<a href='index.html'>메인페이지로 이동</a>");
+
+		pw.close();
+
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("list dopost");
 	}
 
 }
