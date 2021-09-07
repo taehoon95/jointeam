@@ -21,10 +21,11 @@ public class ListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("list doget");
-		response.setContentType("text/html; charset=UTF-8;"); // �븳湲� �꽕�젙
+		response.setContentType("text/html; charset=UTF-8;");
+		request.setCharacterEncoding("UTF-8");
 		String[] id = new String[] { "jinwoo", "taehoon", "ryeongeun", "songhwa" };
 
-		PrintWriter pw = response.getWriter();// �슂泥�
+		PrintWriter pw = response.getWriter();
 		pw.println("<div>");
 		pw.println("<table border='1' width='1200'>");
 		pw.println("<tr>");
