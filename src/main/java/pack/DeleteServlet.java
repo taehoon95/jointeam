@@ -14,20 +14,20 @@ public class DeleteServlet extends HttpServlet {
        
     public DeleteServlet() {
         super();
-        System.out.println("»ı¼ºÀÚ call");
+        System.out.println("ìƒì„±ì call");
     }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       System.out.println("doGet");
 	   response.setContentType("text/html;Charset=UTF-8");
-	   request.setCharacterEncoding("euc-kr");
+	   request.setCharacterEncoding("UTF-8");
 	   String id=request.getParameter("id");
 	   System.out.println(id);
 	   
 	   PrintWriter out=response.getWriter();
 	   out.println("<html>");
 	   out.println("<body>");
-	   out.println("<h1>"+id+" »èÁ¦µÊ"+"<h1>");
+	   out.println("<h1>"+id+" ì‚­ì œë¨."+"<h1>");
 	   
 	   out.println("</body>");
 	   out.println("</html>");
