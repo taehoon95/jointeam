@@ -1,41 +1,41 @@
 package pack;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class DeleteServlet
- */
-@WebServlet("/RegisterServlet")
+@WebServlet("/register") 
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public RegisterServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        System.out.println("생성자 콜");
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("doGet");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("doPost");
+		request.setCharacterEncoding("euc-kr");
+		String id = request.getParameter("id");
+		System.out.println(id);
+		
+		response.setContentType("text/html;charset=euc-kr");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+			out.println("<body>");
+				out.println("<h1>" + id + " 가입됨 </h1>");	
+			out.println("</body>");
+		out.println("</html>");
+		out.close();
 	}
 
 }
