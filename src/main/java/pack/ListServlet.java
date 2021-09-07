@@ -15,20 +15,20 @@ public class ListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	public ListServlet() {
-		System.out.println("생성자 콜");
+		System.out.println("리스트 생성자 콜");
 	}
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("list doget");
-		response.setContentType("text/html; charset=UTF-8;"); // 한글 설정
+		response.setContentType("text/html; charset=UTF-8;"); // �븳湲� �꽕�젙
 		String[] id = new String[] { "jinwoo", "taehoon", "ryeongeun", "songhwa" };
 
-		PrintWriter pw = response.getWriter();// 요청
+		PrintWriter pw = response.getWriter();// �슂泥�
 		pw.println("<div>");
 		pw.println("<table border='1' width='1200'>");
 		pw.println("<tr>");
-		pw.println("<td>아이디</td>");
+		pw.println("<td>이름</td>");
 		pw.println("<td>삭제</td>");
 		pw.println("<td>수정</td>");
 		pw.println("</tr>");
@@ -48,7 +48,7 @@ public class ListServlet extends HttpServlet {
 
 		pw.println("</div>");
 
-		pw.println("<a href='index.html'>메인페이지로 이동</a>");
+		pw.println("<a href='index.html'>메인 페이지로 이동</a>");
 
 		pw.close();
 
