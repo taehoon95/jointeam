@@ -14,7 +14,7 @@ public class DeleteServlet extends HttpServlet {
        
     public DeleteServlet() {
         super();
-        System.out.println("생성자 call");
+        System.out.println("생성자 calls");
     }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
