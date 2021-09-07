@@ -2,8 +2,6 @@ package pack;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,20 +14,19 @@ public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     public UpdateServlet() {
-    	System.out.println("¼öÁ¤ »ı¼ºÀÚ Äİ");
+    	System.out.println("ìˆ˜ì • ìƒì„±ì ì½œ");
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("¼öÁ¤ µÎ°¹");
-		Map<Integer,String> empMap = new HashMap<>();
+		System.out.println("ìˆ˜ì • ë‘ê°¯");
 		response.setContentType("text/html; charset = utf-8");
 		PrintWriter out = response.getWriter();
-		String name = request.getParameter("name");
+		String id = request.getParameter("id");
 		out.println(
 				
 				"<html>"+
 						"<body>"+
-							"<h1>${name}¼öÁ¤ µÇ¾ú½À´Ï´Ù.</h1>"+
+							"<h1>"+id+"ìˆ˜ì • ë˜ì—ˆìŠµë‹ˆë‹¤..</h1>"+
 						"</body>"+
 				"</html>"
 		);
@@ -38,7 +35,7 @@ public class UpdateServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("¼öÁ¤ µÎÆ÷½ºÆ®!");
+		System.out.println("ìˆ˜ì • í¬ìŠ¤íŠ¸");
 	}
 
 }
