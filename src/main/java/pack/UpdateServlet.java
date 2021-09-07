@@ -25,7 +25,7 @@ public class UpdateServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("수정 두포스트");
+		System.out.println("수정 두포스트!");
 		Map<Integer,String> empMap = new HashMap<>();
 		response.setContentType("text/html; charset = utf-8");
 		PrintWriter out = response.getWriter();
