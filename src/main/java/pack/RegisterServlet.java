@@ -15,7 +15,7 @@ public class RegisterServlet extends HttpServlet {
        
     public RegisterServlet() {
         super();
-        System.out.println("»ı¼ºÀÚ Äİ ");
+        System.out.println("íšŒì›ê°€ì…ì™„ë£Œ ");
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 			out.println("<body>");
-				out.println("<h1>" + id + " °¡ÀÔµÊ </h1>");	
+				out.println("<h1>" + id + "ë‹˜ íšŒì›ê°€ì…ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤</h1>");	
 			out.println("</body>");
 		out.println("</html>");
 		out.close();
